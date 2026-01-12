@@ -1,8 +1,16 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "buildCommand": "pnpm install && pnpm run build",
+  "outputDirectory": "dist/client",
+  "installCommand": "pnpm install",
   "framework": null,
-  "outputDirectory": "dist"
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
