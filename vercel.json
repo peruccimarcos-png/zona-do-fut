@@ -1,16 +1,6 @@
 {
-  "buildCommand": "pnpm install && pnpm run build",
+  "buildCommand": "pnpm install --no-frozen-lockfile && pnpm run build",
   "outputDirectory": "dist/client",
-  "installCommand": "pnpm install",
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "framework": null
 }
