@@ -14,6 +14,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     assetsDir: 'assets',
     emptyOutDir: true,
+    assetsInlineLimit: 0,
   },
   resolve: {
     alias: {
