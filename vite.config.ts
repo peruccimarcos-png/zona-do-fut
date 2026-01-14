@@ -11,6 +11,11 @@ const plugins = [react(), tailwindcss(), vitePluginManusRuntime()];
 
 export default defineConfig({
   plugins,
+    base: '/',
+  build: {
+    outDir: 'dist/public',
+    assetsDir: 'assets',
+  },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
