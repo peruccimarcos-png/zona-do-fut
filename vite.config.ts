@@ -9,12 +9,18 @@ const plugins = [react(), tailwindcss(), vitePluginManusRuntime()];
 
 export default defineConfig({
   plugins,
-  base: '/',
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     assetsDir: 'assets',
     emptyOutDir: true,
     assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      },
+    },
   },
   resolve: {
     alias: {
