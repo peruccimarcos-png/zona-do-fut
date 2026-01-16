@@ -5,12 +5,13 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), vitePluginManusRuntime()];
+const plugins = [react( ), tailwindcss(), vitePluginManusRuntime()];
 
 export default defineConfig({
   plugins,
+  base: process.env.NODE_ENV === 'production' ? 'https://zona-do-fut.onrender.com/' : '/',
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "dist/public" ),
     assetsDir: 'assets',
     emptyOutDir: true,
     assetsInlineLimit: 0,
