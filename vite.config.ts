@@ -3,13 +3,17 @@ import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "path";
 import { defineConfig } from "vite";
-import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
+// import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";  // ← COMENTAR
 
-const plugins = [react(), tailwindcss(), vitePluginManusRuntime()];
+const plugins = [
+  react(), 
+  tailwindcss(), 
+  // vitePluginManusRuntime()  // ← COMENTAR
+];
 
 export default defineConfig({
   plugins,
-  base: 'https://zona-do-fut.onrender.com/',  // ← SEMPRE URL COMPLETA!
+  base: 'https://zona-do-fut.onrender.com/',
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public" ),
     assetsDir: 'assets',
